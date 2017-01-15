@@ -75,6 +75,9 @@
             console.log(response.statusText);
           }
         )
+      },
+      clearSearch: function() {
+        return this.filterItems = '';
       }
     }
   });
