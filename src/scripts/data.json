@@ -1,0 +1,354 @@
+{
+  "$id": "1",
+  "name": "root",
+  "description": ".",
+  "url": "",
+  "children": [{
+      "$id": "2",
+      "name": "1",
+      "description": "Painel de Controle",
+      "url": "",
+      "children": [{
+        "$id": "3",
+        "name": "1_1",
+        "description": "Compras",
+        "url": "/Mercado.asp",
+        "children": []
+      }]
+    },
+    {
+      "$id": "4",
+      "name": "2",
+      "description": "Usuários",
+      "url": "",
+      "children": [{
+        "$id": "5",
+        "name": "2_0",
+        "description": "Usuários",
+        "url": "/do/Usuario.mvc",
+        "children": []
+      }]
+    },
+    {
+      "$id": "6",
+      "name": "3",
+      "description": "Produtos",
+      "url": "",
+      "children": [{
+          "$id": "7",
+          "name": "3_0",
+          "description": "Meus Produtos",
+          "url": "/ListaTodosProdutosIE.asp",
+          "children": []
+        },
+        {
+          "$id": "8",
+          "name": "3_1",
+          "description": "Grupos de Produtos",
+          "url": "/ListaGruposProd.asp",
+          "children": []
+        },
+        {
+          "$id": "9",
+          "name": "3_7",
+          "description": "'Flows' de Produtos",
+          "url": "/ME/ListaFlows.aspx",
+          "children": []
+        },
+        {
+          "$id": "10",
+          "name": "3_3",
+          "description": "Catálogo de Compras",
+          "url": "/ListaProdutos.asp",
+          "children": []
+        },
+        {
+          "$id": "11",
+          "name": "3_5",
+          "description": "Catálogos Fornecedores",
+          "url": "/CatalogoProdutos.asp",
+          "children": []
+        }
+      ]
+    },
+    {
+      "$id": "12",
+      "name": "4",
+      "description": "Fornecedores",
+      "url": "",
+      "children": [{
+        "$id": "13",
+        "name": "4_1",
+        "description": "Fornecedores",
+        "url": "/ListaFornecedor.asp",
+        "children": []
+      }]
+    },
+    {
+      "$id": "14",
+      "name": "5",
+      "description": "Preferências",
+      "url": "",
+      "children": [{
+          "$id": "15",
+          "name": "5_1",
+          "description": "Locais",
+          "url": "/ME/ListaLocais.aspx",
+          "children": []
+        },
+        {
+          "$id": "16",
+          "name": "5_2",
+          "description": "Centros de Custos",
+          "url": "/ME/ListaCCustoWF.aspx",
+          "children": []
+        },
+        {
+          "$id": "17",
+          "name": "5_4",
+          "description": "Configurações",
+          "url": "/PreferenciasWF.asp",
+          "children": []
+        },
+        {
+          "$id": "18",
+          "name": "5_22",
+          "description": "Configurações (Fornecedor)",
+          "url": "/ME/PreferenciasWFF.aspx",
+          "children": []
+        }
+      ]
+    },
+    {
+      "$id": "19",
+      "name": "6",
+      "description": "WorkFlow",
+      "url": "",
+      "children": [{
+          "$id": "20",
+          "name": "6_4",
+          "description": "Catálogo",
+          "url": "/ME/MarcaCatalogosWF.aspx",
+          "children": []
+        },
+        {
+          "$id": "21",
+          "name": "6_8",
+          "description": "Substituições de Usuário",
+          "url": "/do/Substituicao.mvc",
+          "children": []
+        },
+        {
+          "$id": "22",
+          "name": "6_17",
+          "description": "Relatórios de Workflow",
+          "url": "/RelatLinksRelatoriosWF.asp",
+          "children": []
+        },
+        {
+          "$id": "23",
+          "name": "6_22",
+          "description": "Informações de Compras",
+          "url": "/InformacaoCompras.asp",
+          "children": []
+        },
+        {
+          "$id": "24",
+          "name": "7_02",
+          "description": "Cadastro de Origem de Material",
+          "url": "/do/OrigemMaterial/OrigemMaterial.mvc",
+          "children": []
+        },
+        {
+          "$id": "25",
+          "name": "7_03",
+          "description": "Cadastro de Unidades",
+          "url": "/DO/Unit/Unit.mvc",
+          "children": []
+        },
+        {
+          "$id": "26",
+          "name": "6_70",
+          "description": "Cadastro de Grupo de Compras",
+          "url": "/ME/GrupoCompraWF.aspx",
+          "children": []
+        },
+        {
+          "$id": "27",
+          "name": "6_71",
+          "description": "Cadastro de Categoria do Material",
+          "url": "/ME/CategoriaMaterial.aspx",
+          "children": []
+        },
+        {
+          "$id": "28",
+          "name": "6_72",
+          "description": "Cadastro de Classificação do Serviço",
+          "url": "/ME/ClassificacaoFiscalServico.aspx",
+          "children": []
+        },
+        {
+          "$id": "29",
+          "name": "6_74",
+          "description": "Textos Genéricos",
+          "url": "/ME/TextoGenerico.aspx",
+          "children": []
+        },
+        {
+          "$id": "30",
+          "name": "6_94",
+          "description": "Cadastro de Digramas de Rede",
+          "url": "/DO/DiagramaRede.mvc",
+          "children": []
+        },
+        {
+          "$id": "31",
+          "name": "6_98",
+          "description": "Formas de Pagamento",
+          "url": "/DO/FormaPagamento.mvc/",
+          "children": []
+        }
+      ]
+    },
+    {
+      "$id": "32",
+      "name": "7",
+      "description": "Relatórios",
+      "url": "",
+      "children": [{
+          "$id": "33",
+          "name": "7_1",
+          "description": "Ver gráficos",
+          "url": "/Graficos.asp",
+          "children": []
+        },
+        {
+          "$id": "34",
+          "name": "7_6",
+          "description": "Acompanhamento de Relatórios",
+          "url": "/ME/ListaExtracaoRelatorio.aspx",
+          "children": []
+        },
+        {
+          "$id": "35",
+          "name": "7_7",
+          "description": "Extração de Relatório",
+          "url": "/ME/ExtracaoRelatorio.aspx",
+          "children": []
+        },
+        {
+          "$id": "36",
+          "name": "7_2",
+          "description": "Relatórios de Workflow",
+          "url": "/RelatLinksRelatoriosWF.asp",
+          "children": []
+        }
+      ]
+    },
+    {
+      "$id": "37",
+      "name": "8",
+      "description": "Situação Financeira",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "38",
+      "name": "9",
+      "description": "WorkFlow Central",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "39",
+      "name": "10",
+      "description": "Suprix",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "40",
+      "name": "12",
+      "description": "Contas Pagas",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "41",
+      "name": "13",
+      "description": "Contas a Pagar",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "42",
+      "name": "25",
+      "description": "Notas Fiscais",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "43",
+      "name": "14",
+      "description": "RoundTrip",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "44",
+      "name": "15",
+      "description": "WF Documentos",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "45",
+      "name": "18",
+      "description": "Monitor de Integração",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "46",
+      "name": "19",
+      "description": "Amarrações",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "47",
+      "name": "20",
+      "description": "Material Treinamento",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "48",
+      "name": "21",
+      "description": "Links Personalizados",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "49",
+      "name": "22",
+      "description": "Mensagens",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "50",
+      "name": "23",
+      "description": "Consulta Serasa",
+      "url": "",
+      "children": []
+    },
+    {
+      "$id": "51",
+      "name": "24",
+      "description": "WorkFlow Fornecedor",
+      "url": "",
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+/**
+ * new Fast Sidebar Menu / CSS Component
+ * @version v1.0.0
+ * @author Emanoel Lopes/2017
+ * @license by Mercado Eletrônico
+ */
+
+/*
+ * Import Utils
+ */
+@import 'utils/variables.scss';
+
+/*
+ * Here starts New Fast Menu Styles
+ */
+
+ * {
+   box-sizing: border-box;
+ }
+
+/* Default Styles */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/*
+ * If Page Has SideBar
+ */
+body.hasSidebar {
+  #meSidebarAction,
+  #meSidebarDrawer {
+    display: block;
+  }
+
+  #header {
+    .hdr_sticky {
+      background-position: 64px top;
+
+      > h1 {
+        left: 84px;
+      }
+    }
+  }
+}
+
+/* Sidebar Component */
+#meSidebarAction {
+  display: none;
+  background-color: #0080b1;
+  line-height: 64px;
+  margin: 0;
+  width: 64px;
+  height: 64px;
+  z-index: 10;
+
+  .open {
+    display: block;
+  }
+
+  .close {
+    display: none;
+  }
+
+  &.is-active {
+    .open {
+      display: none;
+    }
+
+    .close {
+      display:block;
+    }
+  }
+}
+
+#meSidebarAction > .material-icons {
+  color: #fff;
+  font-size: 28px;
+  line-height: 64px;
+}
+
+.me-sidebar__nav,
+.me-obfuscator {
+  position: fixed;
+}
+
+.me-sidebar__nav {
+  background-color: #0080b1;
+  border-right: 1px solid #0080b1;
+
+  @media screen and (min-width:1024px) {
+    width: 360px;
+    transform: translateX(-360px);
+  }
+}
+
+/*
+ * Sidebar Search Component
+ */
+
+#meSidebarDrawer {
+  .me-sidebar__search {
+    margin-top: 84px;
+    padding: 1em 2em;
+    right: 0;
+
+    &--action {
+      color: #fff;
+      right: 0px;
+      bottom: 25px;
+    }
+
+    .mdl-textfield--floating-label {
+      color: rgba(255,255,255,.26);
+      font-size: 14px;
+
+      &.is-focused .mdl-textfield__label {
+        color:#fff;
+
+        &:after {
+          background-color: #fff;
+        }
+      }
+    }
+
+    .mdl-textfield__input {
+      border-bottom: 1px solid $me-bg-rgba-default;
+    }
+
+    .mdl-textfield__label {
+      color: rgba(255,255,255,.35);
+    }
+  }
+
+  /*
+  * Sidebar List Component
+  */
+  .me-sidebar__list {
+    list-style: none;
+    padding: 0;
+
+    > li {
+      border-left: 5px solid transparent;
+      padding: 1em 2em;
+      color: #fff;
+      transition: $me-transition-default;
+
+      &:hover {
+        background-color: $me-bg-rgba-default;
+        border-left: 5px solid #fff;
+        transition: $me-transition-default;
+      }
+
+      &.is-open {
+        background-color: $me-bg-rgba-default;
+        border-left: 5px solid transparent;
+      }
+    }
+  }
+
+  .me-sidebar__item {
+    position: relative;
+
+    .me-sidebar__link {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &--action {
+      position: absolute;
+      right: 25px;
+      top: 8px;
+      transition: $me-transition-default;
+    }
+
+    &.is-open {
+
+      > span {
+        font-weight: 900;
+      }
+
+      .me-sidebar__subnav {
+        display: block;
+      }
+
+      .me-sidebar__item--action {
+        transform: rotate(180deg);
+        transition: $me-transition-default;
+      }
+    }
+  }
+
+  /*
+  * Sidebar Subnav Component
+  */
+  .me-sidebar__subnav {
+    display: none;
+    padding: 2em 0 0 1em;
+
+    &--item {
+      color: #fff;
+      display: block;
+      padding: 1em 0;
+      text-decoration: none;
+      border-left: 5px solid transparent;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+

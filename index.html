@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Fast Menu</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.min.css">
+  <link rel="stylesheet" href="build/css/main.min.css">
+  <!--[if IE]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.2.0/es5-shim.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+  <![endif]-->
+</head>
+<body class="hasSidebar">
+  <!-- Always shows a header, even in smaller screens. -->
+  <aside id="MESidebar" class="hasSidebar">
+    <div 
+      data-sidebar-action 
+      id="meSidebarAction" 
+      aria-expanded="true" 
+      role="button" tabindex="0" 
+      class="mdl-layout__drawer-button me-sidebar-button"
+      v-bind:class="{ 'is-active': sidebarClass.isActive }"
+      v-model="searchItems"
+      v-on:click="showSidebar">
+        <i class="material-icons open">&#xE5D2;</i>
+        <i class="material-icons close">&#xE5CD;</i>
+    </div>
+    <div id="meSidebarDrawer" class="mdl-layout__drawer me-sidebar__nav" data-drawer v-bind:class="{'is-visible':sidebarClass.isVisible}">
+      <div id="FastMenuSearch" class="me-sidebar__search">
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="me-sidebar__search" v-model="search">
+            <label class="mdl-textfield__label" for="me-sidebar__search">Busque no menu</label>
+            <button class="mdl-button mdl-js-button mdl-button--icon me-sidebar__search--action" id="meSidebarSearchAction">
+              <i class="material-icons">&#xE8B6;</i>
+            </button>
+          </div>
+        </form>
+      </div>
+      <ul class="me-sidebar__list">
+        <li v-for="item in navItems" v-bind:id="'item-' + item.$id" v-bind:data-toggle="'accordion#' + item.$id"class="me-sidebar__item" v-on:click="toggleSubNav('#item-' + item.$id)">
+          <span v-if="item.children.length >= 1">{{item.description}}</span>
+          <span v-if="item.children.length === 0">
+            <a class="me-sidebar__link" v-bind:href="item.url">{{item.description}}</a>
+          </span>
+          <button v-if="item.children.length >= 1" class="mdl-button mdl-js-button mdl-button--icon me-sidebar__item--action">
+            <i class="material-icons">&#xE313;</i>
+          </button>
+          <nav v-if="item.children.length >= 1" class="me-sidebar__subnav">
+            <a class="me-sidebar__subnav--item" v-bind:href="subNavItem.url" v-for="subNavItem in item.children">{{subNavItem.description}}</a>
+          </nav>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="mdl-layout__obfuscator me-obfuscator" 
+      data-obfuscator
+      v-bind:class="{'is-visible':sidebarClass.isVisible}" 
+      v-on:click="showSidebar">
+    </div>
+  </aside>
+
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.min.js"></script>
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.0.3/vue-resource.min.js"></script>
+  <script src="build/js/main.min.js"></script>
+</body>
+</html>
