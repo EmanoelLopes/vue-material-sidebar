@@ -119,6 +119,11 @@ body.hasSidebar {
       color: rgba(255,255,255,.26);
       font-size: 14px;
 
+      .icon-search {
+        font-size: 14px;
+        vertical-align: middle;
+      }
+
       &.is-focused .mdl-textfield__label {
         color:#fff;
 
@@ -130,6 +135,7 @@ body.hasSidebar {
 
     .mdl-textfield__input {
       border-bottom: 1px solid $me-bg-rgba-default;
+      color: #fff;
     }
 
     .mdl-textfield__label {

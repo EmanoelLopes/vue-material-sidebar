@@ -32,7 +32,9 @@
         <form action="#">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="me-sidebar__search" v-model="filterItems">
-            <label class="mdl-textfield__label" for="me-sidebar__search">Busque no menu</label>
+            <label class="mdl-textfield__label" for="me-sidebar__search">
+              <i class="material-icons icon-search">&#xE8B6;</i> Busque no menu
+            </label>
             <button class="mdl-button mdl-js-button mdl-button--icon me-sidebar__search--action" id="meSidebarSearchAction" v-on:click="clearSearch">
               <i class="material-icons">&#xE5CD;</i>
             </button>

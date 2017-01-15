@@ -76,7 +76,9 @@
           }
         )
       },
-      clearSearch: function() {
+      clearSearch: function(e) {        
+        e.preventDefault();
+        document.querySelector('#FastMenuSearch .mdl-textfield--floating-label').classList.remove('is-dirty');
         return this.filterItems = '';
       }
     }
