@@ -16,7 +16,7 @@
 </head>
 <body class="hasSidebar">
   <!-- Always shows a header, even in smaller screens. -->
-  <aside id="MESidebar" class="hasSidebar">
+  <aside id="MESidebar">
     <div 
       data-sidebar-action 
       id="meSidebarAction" 
@@ -24,7 +24,6 @@
       role="button" tabindex="0" 
       class="mdl-layout__drawer-button me-sidebar-button"
       v-bind:class="{ 'is-active': sidebarClass.isActive }"
-      v-model="searchItems"
       v-on:click="showSidebar">
         <i class="material-icons open">&#xE5D2;</i>
         <i class="material-icons close">&#xE5CD;</i>
@@ -33,7 +32,7 @@
       <div id="FastMenuSearch" class="me-sidebar__search">
         <form action="#">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="me-sidebar__search" v-model="searchItems">
+            <input class="mdl-textfield__input" type="text" id="me-sidebar__search" v-model="filterItems">
             <label class="mdl-textfield__label" for="me-sidebar__search">Busque no menu</label>
             <button class="mdl-button mdl-js-button mdl-button--icon me-sidebar__search--action" id="meSidebarSearchAction">
               <i class="material-icons">&#xE8B6;</i>
@@ -42,7 +41,7 @@
         </form>
       </div>
       <ul class="me-sidebar__list">
-        <li v-for="item in navItems" v-bind:id="'item-' + item.$id" v-bind:data-toggle="'accordion#' + item.$id"class="me-sidebar__item" v-on:click="toggleSubNav('#item-' + item.$id)">
+        <li v-for="item in filteredItems" v-bind:id="'item-' + item.$id" v-bind:data-toggle="'accordion#' + item.$id"class="me-sidebar__item" v-on:click="toggleSubNav('#item-' + item.$id)" v-bind:title="item.description">
           <span v-if="item.children.length >= 1">{{item.description}}</span>
           <span v-if="item.children.length === 0">
             <a class="me-sidebar__link" v-bind:href="item.url">{{item.description}}</a>
@@ -63,7 +62,6 @@
       v-on:click="showSidebar">
     </div>
   </aside>
-
 
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

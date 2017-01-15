@@ -7,72 +7,54 @@
 
   'use strict';
 
+  /* 
+   * Utils
+   */
+  var _ = require('lodash');
+
   /*
    * Defaults
    */
   var ME = {
-    //-Components
-    components: {
-      sidebarAction: {
-        name: 'sidebar-action',
-        template: '#MESidebarAction',
-        props: []
-      },
-      filterItems: {
-        name: 'sidebar-filter-items',
-        template: '#MESidebarFilterItems',
-        props: []
-      },
-      itemsList: {
-        name: 'sidebar-items-list',
-        template: '#MESidebarItemsList',
-        props: []
-      },
-      obfuscator: {
-        name: 'sidebar-obfuscator',
-        template: '#MESidebarObfuscator',
-        props: []
-      }
-    },
     //- Resource 
     resource: 'https://private-987fcc-mockmesidebarnav.apiary-mock.com/sitemap'
   };
 
-
   /*
    * Vue Instance
    */
-  new Vue({
+  var Sidebar = new Vue({
     el: '#MESidebar',
 
     data: {
       navItems: [],
+      filterItems: '',
       sidebarClass: {
         isVisible: false,
         isActive: false
       },
-      searchItems: '',
       subNavClass: {
         isOpen: false
       },
-      APIResource: ME.resource,
-      search: ''
+      APIResource: ME.resource
     }, 
 
-    created: function() {
+    mounted: function() {
       this.fetchItemsData()
-    },
-
-    components: {
-      'me-obfuscator': ME.components.obfuscator,
-      'me-sidebar-action': ME.components.sidebarAction
     },
 
     computed: {
       filteredItems: function() {
-        return this.navItems.filter(function(item) {
-          return item.indexOf(this.serchItems) !== -1;
-        }.bind(this));
+        var list =  this.navItems;
+        var filter = this.filterItems;
+        
+        if(_.isEmpty(filter)) {
+          return list;
+        }
+
+        return _.filter(list, function(item){
+          return item.description.indexOf(filter) > -1
+        });
       }
     },
 
@@ -87,7 +69,7 @@
       fetchItemsData: function() {
         this.$http.get(this.APIResource).then(
           function success(response){
-            this.navItems = response.body[0].children;
+            Vue.set(this, 'navItems', response.body[0].children);
           },
           function error(response, err) {
             console.log(response.statusText);
@@ -96,5 +78,7 @@
       }
     }
   });
+
 })();
+
 
