@@ -7,7 +7,42 @@
 
   'use strict';
 
-  var sidebarApp = new Vue({
+  /*
+   * Defaults
+   */
+  var ME = {
+    //-Components
+    components: {
+      sidebarAction: {
+        name: 'sidebar-action',
+        template: '#MESidebarAction',
+        props: []
+      },
+      filterItems: {
+        name: 'sidebar-filter-items',
+        template: '#MESidebarFilterItems',
+        props: []
+      },
+      itemsList: {
+        name: 'sidebar-items-list',
+        template: '#MESidebarItemsList',
+        props: []
+      },
+      obfuscator: {
+        name: 'sidebar-obfuscator',
+        template: '#MESidebarObfuscator',
+        props: []
+      }
+    },
+    //- Resource 
+    resource: 'https://private-987fcc-mockmesidebarnav.apiary-mock.com/sitemap'
+  };
+
+
+  /*
+   * Vue Instance
+   */
+  new Vue({
     el: '#MESidebar',
 
     data: {
@@ -16,16 +51,29 @@
         isVisible: false,
         isActive: false
       },
-      searchItems: [],      
+      searchItems: '',
       subNavClass: {
         isOpen: false
       },
-      APIResource: 'https://private-987fcc-mockmesidebarnav.apiary-mock.com/sitemap',
+      APIResource: ME.resource,
       search: ''
     }, 
 
     created: function() {
       this.fetchItemsData()
+    },
+
+    components: {
+      'me-obfuscator': ME.components.obfuscator,
+      'me-sidebar-action': ME.components.sidebarAction
+    },
+
+    computed: {
+      filteredItems: function() {
+        return this.navItems.filter(function(item) {
+          return item.indexOf(this.serchItems) !== -1;
+        }.bind(this));
+      }
     },
 
     methods: {
