@@ -17,7 +17,7 @@
    */
   var ME = {
     //- Resource 
-    resource: 'https://private-987fcc-mockmesidebarnav.apiary-mock.com/sitemap'
+    resource: '/do/api/v1/sitemap'
   };
 
   /*
@@ -53,7 +53,7 @@
         }
 
         return _.filter(list, function(item){
-          return item.description.indexOf(filter) > -1
+          return item.description.indexOf(filter) > -1;
         });
       }
     },
@@ -79,7 +79,7 @@
       clearSearch: function(e) {        
         e.preventDefault();
         document.querySelector('#FastMenuSearch .mdl-textfield--floating-label').classList.remove('is-dirty');
-        return this.filterItems = '';
+        this.filterItems = '';
       }
     }
   });

@@ -57,7 +57,7 @@ body.hasSidebar {
   margin: 0;
   width: 64px;
   height: 64px;
-  z-index: 10;
+  z-index: 9999;
 
   .open {
     display: block;
@@ -136,6 +136,7 @@ body.hasSidebar {
     .mdl-textfield__input {
       border-bottom: 1px solid $me-bg-rgba-default;
       color: #fff;
+      padding: 20px 0;
     }
 
     .mdl-textfield__label {
